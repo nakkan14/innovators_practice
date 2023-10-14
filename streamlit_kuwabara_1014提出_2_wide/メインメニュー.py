@@ -1,8 +1,6 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(layout="wide")
-
 # 和歌山市エリアマップ
 st.title("和歌山市のエリア紹介")
 st.image('wakayamacity_map.png', caption='和歌山市の７エリア')

@@ -3,8 +3,6 @@ from streamlit_folium import st_folium
 import folium
 import pandas as pd
 
-st.set_page_config(layout="wide")
-
 st.title("②北西部から探す")
 
 # 表示するデータを読み込み
@@ -265,4 +263,4 @@ if show_homes:
         ).add_to(m)
 
 # 完成したマップをStreamlitに表示
-st_folium(m, width=1200, height=800)
+st_folium(m, width=800, height=800)

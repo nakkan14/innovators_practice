@@ -3,13 +3,11 @@ from streamlit_folium import st_folium
 import folium
 import pandas as pd
 
-st.set_page_config(layout="wide")
-
-st.title("②北西部から探す")
+st.title("①中心部から探す")
 
 # 表示するデータを読み込み
 original_df = pd.read_csv('20231012_SUUMO_和歌山市賃貸_最寄り施設_詳細_改訂.csv')
-df = original_df[original_df['地区_ブロック'] == '北西部地域']
+df = original_df[original_df['地区_ブロック'] == '中心部地域']
 df_park = pd.read_csv('いこーよ公園.csv')
 df_school = pd.read_csv('20231004_和歌山市小学校_スクレイピング_経度緯度追加.csv')
 df_nursery = pd.read_csv('20231004_和歌山市保育園_スクレイピング_経度緯度追加.csv')
@@ -18,9 +16,9 @@ df_lesson=pd.read_csv('20231004_習い事スクスク_スクレイピング_経�
 
 # 地図の基本設定⇒locationを地区ブロックごとに調整する
 m = folium.Map(
-    location=[34.25434329239229, 135.12050626781215],
+    location=[34.22294511274448, 135.18994329478005],
     tiles='OpenStreetMap',
-    zoom_start=13
+    zoom_start=14
 )
 
 # 地図表示のサイドバー
@@ -265,4 +263,4 @@ if show_homes:
         ).add_to(m)
 
 # 完成したマップをStreamlitに表示
-st_folium(m, width=1200, height=800)
+st_folium(m, width=800, height=800)
